@@ -1,0 +1,35 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">ReadingList</a>
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <ul class="nav nav-right">
+        {{#if authenticatedUser}}
+        <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                {{authenticatedUser.name}}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="/profile">My Reading List</a>
+
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/signout">Sign Out</a>
+            </div>
+        </div>
+        {{else}}
+        <li class="nav-item">
+            <a href="/signin" title="Go To Sign In Page" class="nav-link text-light">Sign In</a>
+        </li>
+        <li class="nav-item">
+            <a href="/signup" title="Go to Sign Up Page" class="nav-link text-light">Sign Up</a>
+        </li>
+        {{/if}}
+    </ul>
+
+</nav>
